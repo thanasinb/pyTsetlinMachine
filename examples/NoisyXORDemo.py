@@ -1,11 +1,13 @@
+import os
 from pyTsetlinMachine.tm import MultiClassTsetlinMachine
 import numpy as np 
 
-train_data = np.loadtxt("NoisyXORTrainingData.txt")
+this_dir, this_filename = os.path.split(__file__)
+train_data = np.loadtxt(os.path.join(this_dir, "NoisyXORTrainingData.txt"))
 X_train = train_data[:,0:-1]
 Y_train = train_data[:,-1]
 
-test_data = np.loadtxt("NoisyXORTestData.txt")
+test_data = np.loadtxt(os.path.join(this_dir, "NoisyXORTestData.txt"))
 X_test = test_data[:,0:-1]
 Y_test = test_data[:,-1]
 
